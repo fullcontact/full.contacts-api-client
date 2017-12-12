@@ -1,5 +1,4 @@
-(ns full.api.util
-    (:require []))
+(ns full.api.util)
 
 (def base-url "https://app.fullcontact.com")
 

@@ -1,12 +1,11 @@
 (ns full.api.oauth
-    (:require [
-        [full.api.http :as http]
-        [full.api.util :as util]
-        [ring.util.codec :refer [form-encode]]]))
+    (:require [full.api.http :as http]
+              [full.api.util :as util]
+              [ring.util.codec :refer [form-encode]]))
 
 
 (defn get-authorize-url [& {:keys [client-id scope redirect-uri state]}]
-    (str u/base-url "/oauth/authorize?" (form-encode {:scope        scope
+    (str util/base-url "/oauth/authorize?" (form-encode {:scope        scope
                                                       :client_id    client-id
                                                       :redirect_uri redirect-uri
                                                       :state        state})))

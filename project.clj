@@ -1,4 +1,4 @@
-(defproject fullcontact/contactsapi "1.0.0"
+(defproject fullcontact/contactsapi "0.0.1"
     :description "Clojure SDK for FullContact Contacts API"
     :url "https://github.com/fullcontact/contacts-api-clojure"
     :license {:name "Eclipse Public License - v 1.0"

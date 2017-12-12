@@ -1,13 +1,11 @@
 (ns full.api.http
-    (:require [
-        [full.core :as core]
-        [org.httpkit.client :as http]
-        [clojure.data.json :as json]
-        [full.api.util :as util]
-        [ring.util.codec :refer [form-encode]]))
+    (:require [org.httpkit.client :as http]
+              [clojure.data.json :as json]
+              [full.api.util :as util]
+              [ring.util.codec :refer [form-encode]]))
 
 (def version "1.0.0")
-(def api-version = "v1")
+(def api-version "v1")
 (defn get-url [endpoint]
     (str util/base-url api-version endpoint))
 
@@ -24,12 +22,12 @@
                                                                      :else    "text/plain")
                                                 "Authorization" (str "Bearer " (:access_token auth))} headers)
                              :body       (cond
-                                            json-req (json/encode json)
+                                            json-req (json/write-str json)
                                             form-req (form-encode form)
                                             :else    body)}
                             params))]
             {:status   (:status res)
              :headers  (:headers res)
-             :body     (if (re-find #'(i?)json' (get-in res [:headers :content-type]))
-                            (json/decode (:body res))
+             :body     (if (re-find #"(i?)json" (get-in res [:headers :content-type]))
+                            (json/read-str (:body res))
                             (:body res))})))
