@@ -1,4 +1,4 @@
-(defproject fullcontact/contactsapi "0.0.1"
+(defproject fullcontact/contacts-api-clojure "0.0.1"
     :description "Clojure SDK for FullContact Contacts API"
     :url "https://github.com/fullcontact/contacts-api-clojure"
     :license {:name "Eclipse Public License - v 1.0"
@@ -12,9 +12,10 @@
                    [fullcontact/full.core "1.0.3"]
                    [clj-time "0.14.0"]
                    [fullcontact/full.async "1.0.0"]]
-    :plugins [[lein-environ "1.0.2"]]
+    :profiles {:dev {:dependencies [[midje "1.9.0"]]}}
+    :plugins [[lein-environ "1.0.2"]
+              [lein-midje "3.1.3"]]
     :deploy-repositories [["releases" {:url "https://clojars.org/repo/" :creds :gpg}]]
     :min-lein-version "2.5.0"
     :clean-targets ^{:protect false} ["target"]
-    :source-paths ["src/"]
     :aot :all)
