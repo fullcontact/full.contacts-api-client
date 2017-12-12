@@ -12,7 +12,7 @@
                    [fullcontact/full.core "1.0.3"]
                    [clj-time "0.14.0"]
                    [fullcontact/full.async "1.0.0"]]
-    :profiles {:dev {:dependencies [[midje "1.9.0"]]}}
+    :profiles {:dev {:dependencies [[midje "1.9.0"][mockery "0.1.2"]]}}
     :plugins [[lein-environ "1.0.2"]
               [lein-midje "3.1.3"]]
     :deploy-repositories [["releases" {:url "https://clojars.org/repo/" :creds :gpg}]]
