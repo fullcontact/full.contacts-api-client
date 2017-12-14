@@ -11,13 +11,12 @@
                                                    :size               size
                                                    :scrollCursor       scroll-cursor}))
 
-(defn create- [auth name & {:keys [team-id]}]
-    (http/request "/tags.create" :auth auth :json {:tag    {:tagData {:name name}}
+(defn create- [auth tag & {:keys [team-id]}]
+    (http/request "/tags.create" :auth auth :json {:tag    tag
                                                    :teamId team-id}))
 
-(defn update- [auth tag-id name & {:keys [team-id]}]
-    (http/request "/tags.update" :auth auth :json {:tag    {:tagId tag-id
-                                                            :tagData {:name name}}
+(defn update- [auth tag & {:keys [team-id]}]
+    (http/request "/tags.update" :auth auth :json {:tag    tag
                                                    :teamId team-id}))
 
 (defn delete- [auth tag-id etag & {:keys [team-id]}]
