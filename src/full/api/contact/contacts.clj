@@ -2,37 +2,51 @@
     (:require [clojure.data.json :as json]
               [full.api.http :as http]))
 
-(defn get- [auth contact-ids & {:keys [team-id]}]
+(defn get-
+    "Get a list of contacts by using a list of contact ids. Use :team-id to specify team instead of individual."
+    [auth contact-ids & {:keys [team-id]}]
     (http/request "/contacts.get" :auth auth :json {:contactIds contact-ids
                                                     :teamId team-id}))
 
-(defn scroll [auth & {:keys [team-id scroll-cursor include-deleted size]}]
+(defn scroll
+    "Scrolls the user's list of contacts. Use :team-id to specify team instead of individual."
+    [auth & {:keys [team-id scroll-cursor include-deleted size]}]
     (http/request "/contacts.scroll" :auth auth :json {:includeDeletedContacts include-deleted
                                                        :teamId                 team-id
                                                        :size                   size
                                                        :scrollCursor           scroll-cursor}))
 
-(defn search [auth query & {:keys [team-id tag-ids search-cursor size]}]
+(defn search
+    "Searches the user's list of contacts. Use :team-id to specify team instead of individual."
+    [auth query & {:keys [team-id tag-ids search-cursor size]}]
     (http/request "/contacts.search" :auth auth :json {:tagIds       tag-ids
                                                        :teamId       team-id
                                                        :size         size
                                                        :searchQuery  query
                                                        :searchCursor search-cursor}))
 
-(defn create- [auth contact & {:keys [team-id]}]
+(defn create-
+    "Creates a new contact. Use :team-id to specify team instead of individual."
+    [auth contact & {:keys [team-id]}]
     (http/request "/contacts.create" :auth auth :json {:contact contact
                                                        :teamId  team-id}))
 
-(defn update- [auth contact & {:keys [team-id]}]
+(defn update-
+    "Updates a contact, contactId and etag are required. Use :team-id to specify team instead of individual."
+    [auth contact & {:keys [team-id]}]
     (http/request "/contacts.update" :auth auth :json {:contact contact
                                                        :teamId  team-id}))
 
-(defn delete- [auth contact-id etag & {:keys [team-id]}]
+(defn delete-
+    "Deletes a contact. Use :team-id to specify team instead of individual."
+    [auth contact-id etag & {:keys [team-id]}]
     (http/request "/contacts.delete" :auth auth :json {:contactId  contact-id
                                                        :etag       etag
                                                        :teamId     team-id}))
 
-(defn upload-photo [auth contact-id image & {:keys [team-id]}]
+(defn upload-photo
+    "Uploads and prepend a photo to a contact. Use :team-id to specify team instead of individual."
+    [auth contact-id image & {:keys [team-id]}]
     (http/request "/contacts.uploadPhoto" :auth auth :params {:multipart [{:name "image.png"
                                                                            :content image
                                                                            :filename "image.png"}
