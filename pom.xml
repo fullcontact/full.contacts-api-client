@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>fullcontact</groupId>
-  <artifactId>contactsapi</artifactId>
+  <artifactId>contacts-api-clojure</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.1</version>
-  <name>contactsapi</name>
+  <version>0.1.0</version>
+  <name>contacts-api-clojure</name>
   <description>Clojure SDK for FullContact Contacts API</description>
   <url>https://github.com/fullcontact/contacts-api-clojure</url>
   <licenses>
@@ -17,7 +17,7 @@
   <scm>
     <connection>scm:git:git://github.com/fullcontact/contacts-api-clojure.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/fullcontact/contacts-api-clojure.git</developerConnection>
-    <tag>1ddc5f4f2b2d23857bf63549b58ba625817ab75a
+    <tag>2615c4b6d42f5dc42dcda854b212ab276c34c2b4
 </tag>
     <url>https://github.com/fullcontact/contacts-api-clojure</url>
   </scm>
@@ -100,6 +100,18 @@
       <groupId>fullcontact</groupId>
       <artifactId>full.async</artifactId>
       <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>midje</groupId>
+      <artifactId>midje</artifactId>
+      <version>1.9.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>mockery</groupId>
+      <artifactId>mockery</artifactId>
+      <version>0.1.2</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>
