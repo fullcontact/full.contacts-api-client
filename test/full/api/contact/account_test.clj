@@ -8,6 +8,6 @@
     (fact "get- well-formed request"
         (let [access-token  (h/str-random)
               result        (h/with-mock-http
-                                "{\"accountId\": \"testing\""
+                                "{\"accountId\": \"testing\"}"
                                 #(a/get- access-token))]
             (h/verify result :params (list "/account.get" :auth access-token :json {})) => true)))

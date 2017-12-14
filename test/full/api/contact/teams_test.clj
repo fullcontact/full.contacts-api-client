@@ -8,6 +8,6 @@
     (fact "get- well-formed request"
         (let [access-token  (h/str-random)
               result        (h/with-mock-http
-                                "{\"teams\": []"
+                                "{\"teams\": []}"
                                 #(t/get- access-token))]
             (h/verify result :params (list "/teams.get" :auth access-token :json {})) => true)))
