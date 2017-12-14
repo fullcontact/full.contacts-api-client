@@ -21,22 +21,19 @@
               redirect-uri  (h/str-random)
               result        (h/with-mock-http
                                 "{\"refresh_token\": \"test-token\""
-                                #(o/exchange-auth-code :client-id client-id :client-secret client-secret :code code :redirect-uri redirect-uri))
-              mock (:mock result)]
-            (h/verify-mock mock :params (list "/oauth.exchangeAuthCode" :form {:client_id client-id :client_secret client-secret :redirect_uri redirect-uri :code code})) => true))
+                                #(o/exchange-auth-code :client-id client-id :client-secret client-secret :code code :redirect-uri redirect-uri))]
+            (h/verify result :params (list "/oauth.exchangeAuthCode" :form {:client_id client-id :client_secret client-secret :redirect_uri redirect-uri :code code})) => true))
     (fact "refresh-token well-formed request"
         (let [client-id     (h/str-random)
               client-secret (h/str-random)
               refresh-token (h/str-random)
               result        (h/with-mock-http
                                 "{\"access_token\": \"test-token\""
-                                #(o/refresh-token :client-id client-id :client-secret client-secret :refresh-token refresh-token))
-              mock (:mock result)]
-            (h/verify-mock mock :params (list "/oauth.refreshToken" :form {:client_id client-id :client_secret client-secret :refresh_token refresh-token})) => true))
-    (fact "veriyf-access-token well-formed request"
+                                #(o/refresh-token :client-id client-id :client-secret client-secret :refresh-token refresh-token))]
+            (h/verify result :params (list "/oauth.refreshToken" :form {:client_id client-id :client_secret client-secret :refresh_token refresh-token})) => true))
+    (fact "verify-access-token well-formed request"
         (let [access-token  (h/str-random)
               result        (h/with-mock-http
                                 "{}"
-                                #(o/verify-access-token access-token))
-              mock (:mock result)]
-            (h/verify-mock mock :params (list "/oauth.verifyAccessToken" :form {:access_token access-token})) => true)))
+                                #(o/verify-access-token access-token))]
+            (h/verify result :params (list "/oauth.verifyAccessToken" :form {:access_token access-token})) => true)))

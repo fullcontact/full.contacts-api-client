@@ -1,7 +1,7 @@
 (ns full.api.contact.webhooks
     (:require [full.api.http :as http]))
 
-(defn get [auth webhook-ids & {:keys [team-id page]}]
+(defn get- [auth webhook-ids & {:keys [team-id page]}]
     (http/request "/webhooks.get" :auth auth :json {:webhookIds webhook-ids
                                                    :teamId     team-id
                                                    :page       page}))
@@ -12,12 +12,12 @@
                                                       :triggerIds trigger-ids
                                                       :page       page}))
 
-(defn create [auth url trigger-ids & {:keys [team-id]}]
+(defn create- [auth url trigger-ids & {:keys [team-id]}]
     (http/request "/webhooks.create" :auth auth :json {:url        url
                                                       :teamId     team-id
                                                       :triggerIds trigger-ids}))
 
-(defn delete [auth webhook-id & {:keys [team-id]}]
+(defn delete- [auth webhook-id & {:keys [team-id]}]
     (http/request "/webhooks.delete" :auth auth :json {:webhookId webhook-id
                                                       :teamId    team-id}))
 

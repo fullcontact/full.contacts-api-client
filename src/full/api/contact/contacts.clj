@@ -2,7 +2,7 @@
     (:require [clojure.data.json :as json]
               [full.api.http :as http]))
 
-(defn get [auth contact-ids & {:keys [team-id]}]
+(defn get- [auth contact-ids & {:keys [team-id]}]
     (http/request "/contacts.get" :auth auth :json {:contactIds contact-ids
                                                     :teamId team-id}))
 
@@ -19,15 +19,15 @@
                                                        :searchQuery  query
                                                        :searchCursor search-cursor}))
 
-(defn create [auth contact & {:keys [team-id]}]
+(defn create- [auth contact & {:keys [team-id]}]
     (http/request "/contacts.create" :auth auth :json {:contact contact
                                                        :teamId  team-id}))
 
-(defn update [auth contact & {:keys [team-id]}]
+(defn update- [auth contact & {:keys [team-id]}]
     (http/request "/contacts.update" :auth auth :json {:contact contact
                                                        :teamId  team-id}))
 
-(defn delete [auth contact-id etag & {:keys [team-id]}]
+(defn delete- [auth contact-id etag & {:keys [team-id]}]
     (http/request "/contacts.delete" :auth auth :json {:contactId  contact-id
                                                        :etag       etag
                                                        :teamId     team-id}))

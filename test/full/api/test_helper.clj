@@ -5,13 +5,15 @@
     (with-mock mock
         {:target :full.api.http/request
          :return (delay r)}
-         {:result (f) :mock @mock }))
+         (let [res @(f)]
+            (assoc @mock :res res))))
 
 (defn str-random [] (.toString (java.util.UUID/randomUUID)))
 
-(defn verify-mock [mock & {:keys [call-count params]
-                           :or   {call-count 1 params '()}}]
+(defn verify [mock & {:keys [call-count params res]
+                      :or   {call-count 1 params '() res nil}}]
     (and
         (true? (:called? mock))
         (= call-count (:call-count mock))
+        (or (nil? res) (= res (:res mock)))
         (= (:call-args mock) params)))

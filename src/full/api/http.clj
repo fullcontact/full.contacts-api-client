@@ -20,7 +20,7 @@
                              :headers    (into {"Content-Type" (cond json-req "application/json"
                                                                      form-req "application/x-www-form-urlencoded"
                                                                      :else    "text/plain")
-                                                "Authorization" (str "Bearer " (:access_token auth))} headers)
+                                                "Authorization" (str "Bearer " auth)} headers)
                              :body       (cond
                                             json-req (json/write-str json)
                                             form-req (form-encode form)
