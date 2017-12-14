@@ -9,9 +9,9 @@
 
 (defn str-random [] (.toString (java.util.UUID/randomUUID)))
 
-(defn verify-mock [mock params & {:keys [call-count params]
-                                  :or   {call-count 1 params '()}}]
+(defn verify-mock [mock & {:keys [call-count params]
+                           :or   {call-count 1 params '()}}]
     (and
         (true? (:called? mock))
         (= call-count (:call-count mock))
-        (every? #(> (.indexOf (:call-args mock) %) -1) params)))
+        (= (:call-args mock) params)))

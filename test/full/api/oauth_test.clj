@@ -23,4 +23,4 @@
                                 "{\"refresh_token\": \"test-token\""
                                 #(o/exchange-auth-code :client-id client-id :client-secret client-secret :code code :redirect-uri redirect-uri))
               mock (:mock result)]
-            (h/verify-mock mock '("/oauth.exchangeAuthCode" :form {:client_id client-id :client_secret client-secret :redirect_uri redirect-uri :code code})) => true)))
+            (h/verify-mock mock :params (list "/oauth.exchangeAuthCode" :form {:client_id client-id :client_secret client-secret :redirect_uri redirect-uri :code code})) => true)))
