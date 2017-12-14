@@ -115,6 +115,33 @@
                                 "{}"
                                 #(c/delete- access-token contact-id etag :team-id team-id))]
             (h/verify result :params (list "/contacts.delete" :auth access-token :json {:contactId contact-id :etag etag :teamId team-id})) => true))
+    (fact "manage-tags well-formed request add only"
+        (let [access-token  (h/str-random)
+              contact-ids   [(h/str-random)]
+              add-tag-ids   [(h/str-random) (h/str-random)]
+              result        (h/with-mock-http
+                                "{}"
+                                #(c/manage-tags access-token contact-ids :add-tag-ids add-tag-ids))]
+            (h/verify result :params (list "/contacts.manageTags" :auth access-token :json {:contactIds contact-ids :addTagIds add-tag-ids :removeTagIds nil :teamId nil})) => true))
+    (fact "manage-tags well-formed request"
+        (let [access-token   (h/str-random)
+              contact-ids    [(h/str-random)]
+              add-tag-ids    [(h/str-random) (h/str-random)]
+              remove-tag-ids [(h/str-random)]
+              result          (h/with-mock-http
+                                "{}"
+                                #(c/manage-tags access-token contact-ids :add-tag-ids add-tag-ids :remove-tag-ids remove-tag-ids))]
+            (h/verify result :params (list "/contacts.manageTags" :auth access-token :json {:contactIds contact-ids :addTagIds add-tag-ids :removeTagIds remove-tag-ids :teamId nil})) => true))
+    (fact "manage-tags well-formed request with team"
+        (let [access-token   (h/str-random)
+              contact-ids    [(h/str-random)]
+              add-tag-ids    [(h/str-random) (h/str-random)]
+              remove-tag-ids [(h/str-random)]
+              team-id        (h/str-random)
+              result         (h/with-mock-http
+                                "{}"
+                                #(c/manage-tags access-token contact-ids :add-tag-ids add-tag-ids :remove-tag-ids remove-tag-ids :team-id team-id))]
+            (h/verify result :params (list "/contacts.manageTags" :auth access-token :json {:contactIds contact-ids :addTagIds add-tag-ids :removeTagIds remove-tag-ids :teamId team-id})) => true))
     (fact "upload-photo well-formed request with team"
         (let [access-token  (h/str-random)
               contact-id    (h/str-random)

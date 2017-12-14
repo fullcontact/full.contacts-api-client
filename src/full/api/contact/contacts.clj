@@ -44,6 +44,14 @@
                                                        :etag       etag
                                                        :teamId     team-id}))
 
+(defn manage-tags
+    "Add or remove tags from contacts."
+    [auth contact-ids & {:keys [add-tag-ids remove-tag-ids team-id]}]
+    (http/request "/contacts.manageTags" :auth auth :json {:contactIds   contact-ids
+                                                           :addTagIds    add-tag-ids
+                                                           :removeTagIds remove-tag-ids
+                                                           :teamId       team-id}))
+
 (defn upload-photo
     "Uploads and prepend a photo to a contact. Use :team-id to specify team instead of individual."
     [auth contact-id image & {:keys [team-id]}]
