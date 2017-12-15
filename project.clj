@@ -1,6 +1,6 @@
-(defproject fullcontact/contacts-api-clojure "0.1.0"
+(defproject fullcontact/full.contacts-api-client "0.1.0"
     :description "Clojure SDK for FullContact Contacts API"
-    :url "https://github.com/fullcontact/contacts-api-clojure"
+    :url "https://github.com/fullcontact/contacts-contacts-api-client-clojure"
     :license {:name "Eclipse Public License - v 1.0"
               :url "http://www.eclipse.org/legal/epl-v10.html"
               :distribution :repo}

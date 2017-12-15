@@ -1,14 +1,14 @@
 # Contacts API Clojure SDK
 
-[![Clojars Project](https://img.shields.io/clojars/v/fullcontact/contacts-api-clojure.svg)](https://clojars.org/fullcontact/contacts-api-clojure)
-[![Build Status](https://travis-ci.org/fullcontact/contacts-api-clojure.svg?branch=master)](https://travis-ci.org/fullcontact/contacts-api-clojure)
+[![Clojars Project](https://img.shields.io/clojars/v/fullcontact/full.contacts-api-client.svg)](https://clojars.org/fullcontact/full.contacts-api-client)
+[![Build Status](https://travis-ci.org/fullcontact/full.contacts-api-client.svg?branch=master)](https://travis-ci.org/fullcontact/full.contacts-api-client)
 
 Clojure SDK for [FullContact Contacts API](https://www.fullcontact.com/apps/docs)
 
 ### Installation
-**NOTE: contacts-api-clojure is not yet available on clojars.**
+**NOTE: Not yet available on clojars.**
 
-`[contacts-api-clojure "0.1.0"]`
+`[full.contacts-api-client "0.1.0"]`
 
 
 ### Documentation
@@ -22,7 +22,7 @@ API Documentation can be found at [https://www.fullcontact.com/apps/docs](https:
 
 ```
 (ns com.example.core
-    (:require [full.api.contact.account :as a]))
+    (:require [full.contacts-api-client.account :as a]))
 
 (defn get-account []
     @(a/get- "<access-token>"))
