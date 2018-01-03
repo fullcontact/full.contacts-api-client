@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>fullcontact</groupId>
-  <artifactId>contacts-api-clojure</artifactId>
+  <artifactId>full.contacts-api-client</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.0</version>
-  <name>contacts-api-clojure</name>
+  <version>0.0.1</version>
+  <name>full.contacts-api-client</name>
   <description>Clojure SDK for FullContact Contacts API</description>
-  <url>https://github.com/fullcontact/contacts-api-clojure</url>
+  <url>https://github.com/fullcontact/contacts-contacts-api-client-clojure</url>
   <licenses>
     <license>
       <name>Eclipse Public License - v 1.0</name>
@@ -15,11 +15,11 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:git:git://github.com/fullcontact/contacts-api-clojure.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/fullcontact/contacts-api-clojure.git</developerConnection>
-    <tag>2615c4b6d42f5dc42dcda854b212ab276c34c2b4
+    <connection>scm:git:git://github.com/fullcontact/full.contacts-api-client.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/fullcontact/full.contacts-api-client.git</developerConnection>
+    <tag>7a4775f0b8df971ac2c6fce89fcd53ca9658c770
 </tag>
-    <url>https://github.com/fullcontact/contacts-api-clojure</url>
+    <url>https://github.com/fullcontact/full.contacts-api-client</url>
   </scm>
   <build>
     <sourceDirectory>src</sourceDirectory>
