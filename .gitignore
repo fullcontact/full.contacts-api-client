@@ -3,3 +3,6 @@ target/
 .lein-env
 *.iml
 .idea
+.project
+.settings/
+.classpath
