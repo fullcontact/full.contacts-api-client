@@ -4,7 +4,7 @@
             [full.contacts-api-client.util :as util]
             [ring.util.codec :refer [form-encode]]))
 
-(def version "0.1.0")
+(def version "0.1.1")
 (def api-version "v1")
 (defn get-url [endpoint]
   (str util/base-url "/api/" api-version endpoint))
