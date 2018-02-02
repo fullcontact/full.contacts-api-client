@@ -29,6 +29,6 @@
                                params))]
       {:status  (:status res)
        :headers (:headers res)
-       :body    (if (re-find #"(i?)json" (or (get-in res [:headers :content-type]) ""))
+       :body    (if (and (re-find #"(i?)json" (or (get-in res [:headers :content-type]) "")) (not (clojure.string/blank? (:body res))))
                   (json/read-str (:body res) :key-fn keyword)
                   (:body res))})))

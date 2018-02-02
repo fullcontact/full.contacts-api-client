@@ -3,7 +3,7 @@
   <groupId>fullcontact</groupId>
   <artifactId>full.contacts-api-client</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.0</version>
+  <version>0.1.0-SNAPSHOT</version>
   <name>full.contacts-api-client</name>
   <description>Clojure SDK for FullContact Contacts API</description>
   <url>https://github.com/fullcontact/contacts-contacts-api-client-clojure</url>
@@ -17,7 +17,7 @@
   <scm>
     <connection>scm:git:git://github.com/fullcontact/full.contacts-api-client.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/fullcontact/full.contacts-api-client.git</developerConnection>
-    <tag>f4b235477d7b0f145e1d60bb5ab3dc24ec77dd23
+    <tag>bc506b2add0fc22bd3e84b03de610b358cbb7c7a
 </tag>
     <url>https://github.com/fullcontact/full.contacts-api-client</url>
   </scm>
@@ -60,6 +60,9 @@
       </releases>
     </repository>
   </repositories>
+  <dependencyManagement>
+    <dependencies/>
+  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>org.clojure</groupId>
