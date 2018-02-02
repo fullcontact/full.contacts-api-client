@@ -17,7 +17,7 @@
   <scm>
     <connection>scm:git:git://github.com/fullcontact/full.contacts-api-client.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/fullcontact/full.contacts-api-client.git</developerConnection>
-    <tag>bc506b2add0fc22bd3e84b03de610b358cbb7c7a
+    <tag>940f2e49653a0d4bc3dbfce17586ee316f087d52
 </tag>
     <url>https://github.com/fullcontact/full.contacts-api-client</url>
   </scm>
@@ -60,9 +60,6 @@
       </releases>
     </repository>
   </repositories>
-  <dependencyManagement>
-    <dependencies/>
-  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>org.clojure</groupId>

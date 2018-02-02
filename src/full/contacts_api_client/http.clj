@@ -30,5 +30,8 @@
       {:status  (:status res)
        :headers (:headers res)
        :body    (if (and (re-find #"(i?)json" (or (get-in res [:headers :content-type]) "")) (not (clojure.string/blank? (:body res))))
-                  (json/read-str (:body res) :key-fn keyword)
+                  (try
+                    (json/read-str (:body res) :key-fn keyword)
+                    (catch Exception e
+                      (:body res)))
                   (:body res))})))
