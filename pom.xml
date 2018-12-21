@@ -17,7 +17,7 @@
   <scm>
     <connection>scm:git:git://github.com/fullcontact/full.contacts-api-client.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/fullcontact/full.contacts-api-client.git</developerConnection>
-    <tag>af2c53cf562a8f11fc86d03f40ecc027081ae804
+    <tag>d3ead30916a0fdd92032346f4477b247c2602a5e
 </tag>
     <url>https://github.com/fullcontact/full.contacts-api-client</url>
   </scm>
