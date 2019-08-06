@@ -7,8 +7,7 @@ Clojure SDK for [FullContact Contacts API](https://www.fullcontact.com/apps/docs
 
 ### Installation
 
-`[fullcontact/full.contacts-api-client "0.2.0"]`
-
+`[fullcontact/full.contacts-api-client "0.2.1"]`
 
 ### Documentation
 
@@ -17,6 +16,7 @@ API Documentation can be found at [https://www.fullcontact.com/apps/docs](https:
 ### Usage
 
 ##### Getting Started
+
 ---
 
 ```
@@ -28,10 +28,9 @@ API Documentation can be found at [https://www.fullcontact.com/apps/docs](https:
 ```
 
 #### Tests
+
 ---
 
 To run tests:
 
 `./lein midje`
-
-
