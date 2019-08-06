@@ -1,10 +1,10 @@
-(defproject fullcontact/full.contacts-api-client "0.2.1"
+(defproject fullcontact/full.contacts-api-client "0.2.2"
     :description "Clojure SDK for FullContact Contacts API"
     :url "https://github.com/fullcontact/contacts-contacts-api-client-clojure"
     :license {:name "Eclipse Public License - v 1.0"
               :url "http://www.eclipse.org/legal/epl-v10.html"
               :distribution :repo}
-    :dependencies [[org.clojure/clojure "1.8.0"]
+    :dependencies [[org.clojure/clojure "1.9.0"]
                    [com.fasterxml.jackson.core/jackson-core "2.9.9"]
                    [com.fasterxml.jackson.core/jackson-databind "2.9.9.1"]
                    [org.curbside.http-kit "2.2.0+sni"]
