@@ -3,7 +3,7 @@
   <groupId>fullcontact</groupId>
   <artifactId>full.contacts-api-client</artifactId>
   <packaging>jar</packaging>
-  <version>0.2.2</version>
+  <version>0.2.3</version>
   <name>full.contacts-api-client</name>
   <description>Clojure SDK for FullContact Contacts API</description>
   <url>https://github.com/fullcontact/contacts-contacts-api-client-clojure</url>
@@ -17,7 +17,7 @@
   <scm>
     <connection>scm:git:git://github.com/fullcontact/full.contacts-api-client.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/fullcontact/full.contacts-api-client.git</developerConnection>
-    <tag>8d1184653c94a55086d04aebddeb834f6dbc8953
+    <tag>c100af6f4a9d30a722e9f1c3cfcc2e2124b340f2
 </tag>
     <url>https://github.com/fullcontact/full.contacts-api-client</url>
   </scm>
@@ -69,12 +69,12 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
-      <version>2.9.9</version>
+      <version>2.9.10</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.9.9.1</version>
+      <version>2.9.10</version>
     </dependency>
     <dependency>
       <groupId>org.curbside.http-kit</groupId>
