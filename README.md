@@ -7,7 +7,7 @@ Clojure SDK for [FullContact Contacts API](https://www.fullcontact.com/apps/docs
 
 ### Installation
 
-`[fullcontact/full.contacts-api-client "0.2.3"]`
+`[fullcontact/full.contacts-api-client "0.2.4"]`
 
 ### Documentation
 
