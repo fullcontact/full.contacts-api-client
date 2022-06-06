@@ -4,6 +4,6 @@
 
 (facts "about util"
        (fact "baseUrl is correct"
-             (= util/base-url "https://app.fullcontact.com") => true)
+             (= util/base-url "https://api.contactsplus.com") => true)
        (fact "get-endpoint-url is correct"
-             (= (util/get-endpoint-url "/v1/test.test") "https://app.fullcontact.com/contacts-api-client/v1/test.test") => true))
+             (= (util/get-endpoint-url "/v1/test.test") "https://api.contactsplus.com/contacts-api-client/v1/test.test") => true))

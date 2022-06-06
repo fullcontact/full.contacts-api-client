@@ -8,6 +8,13 @@
              (let [res @(f)]
                (assoc @mock :res res))))
 
+(defn with-mock-http2 [r f]
+  (with-mock mock
+             {:target :full.contacts-api-client.oauth/request
+              :return (delay r)}
+             (let [res @(f)]
+               (assoc @mock :res res))))
+
 (defn str-random [] (.toString (java.util.UUID/randomUUID)))
 
 (defn verify [mock & {:keys [call-count params res]

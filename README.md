@@ -3,7 +3,7 @@
 [![Clojars Project](https://img.shields.io/clojars/v/fullcontact/full.contacts-api-client.svg)](https://clojars.org/fullcontact/full.contacts-api-client)
 [![Build Status](https://travis-ci.org/fullcontact/full.contacts-api-client.svg?branch=master)](https://travis-ci.org/fullcontact/full.contacts-api-client)
 
-Clojure SDK for [FullContact Contacts API](https://www.fullcontact.com/apps/docs)
+Clojure SDK for [Contacts+ API](https://www.contactsplus.com/developers/contacts-api/)
 
 ### Installation
 
@@ -11,7 +11,7 @@ Clojure SDK for [FullContact Contacts API](https://www.fullcontact.com/apps/docs
 
 ### Documentation
 
-API Documentation can be found at [https://www.fullcontact.com/apps/docs](https://www.fullcontact.com/apps/docs)
+API Documentation can be found at [https://www.contactsplus.com/developers/contacts-api/](https://www.contactsplus.com/developers/contacts-api/)
 
 ### Usage
 

@@ -4,7 +4,7 @@
             [full.contacts-api-client.util :as util]
             [ring.util.codec :refer [form-encode]]))
 
-(def version "0.1.1")
+(def version "0.4.0")
 (def api-version "v1")
 (defn get-url [endpoint]
   (str util/base-url "/api/" api-version endpoint))
@@ -16,12 +16,13 @@
           form-req (not (nil? form))
           res @(http/request (into
                                {:user-agent (str "Contacts API Clojure SDK v" version)
-                                :url (get-url endpoint)
-                                :method method
+                                :url        (get-url endpoint)
+                                :method     method
                                 :headers    (into {"Content-Type"  (cond json-req "application/json"
                                                                          form-req "application/x-www-form-urlencoded"
                                                                          :else "text/plain")
-                                                   "Authorization" (str "Bearer " auth)} headers)
+                                                   "Authorization" (str "Bearer " auth)
+                                                   } headers)
                                 :body       (cond
                                               json-req (json/write-str json)
                                               form-req (form-encode form)
